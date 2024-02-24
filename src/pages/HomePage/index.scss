@@ -1,0 +1,18 @@
+.homepage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #f7f7f8;
+
+  &_container {
+    padding: 50px;
+    margin-top: 10vh;
+    height: fit-content;
+    background-color: #fff;
+
+    h1 {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+  }
+}

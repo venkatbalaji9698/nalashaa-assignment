@@ -1,0 +1,23 @@
+.input {
+  &_label {
+    margin-right: 6px;
+  }
+
+  &_container {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 16px;
+
+    input {
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  }
+
+  &_error-message {
+    position: absolute;
+    font-size: 10px;
+    color: red;
+  }
+}
