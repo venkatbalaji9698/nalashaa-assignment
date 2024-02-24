@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import Button from "../Button";
 import Input from "../Input";
+import PathContants from "../../constants/path-constants";
 import { ErrorMessages } from "../../constants/app-constants";
 import "./index.scss";
 
 const SearchForm = () => {
+  const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -13,6 +16,9 @@ const SearchForm = () => {
 
     if (searchValue === "") {
       setErrorMessage(ErrorMessages.INVALID_SEARCH_TEXT);
+    } else {
+      const path = PathContants.LISTING_PAGE.replace(":query", searchValue);
+      navigate(path);
     }
   };
 
