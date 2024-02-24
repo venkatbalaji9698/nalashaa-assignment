@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import ListingPage from "../pages/ListingPage";
+import StoryPage from "../pages/StoryPage";
 import PageNotFound from "../pages/PageNotFound";
 import { PathContants } from "../constants/path-constants";
 
@@ -11,8 +11,8 @@ const router = createBrowserRouter([
     Component: HomePage,
   },
   {
-    path: PathContants.LISTING_PAGE,
-    Component: ListingPage,
+    path: PathContants.STORY_PAGE,
+    Component: StoryPage,
   },
   {
     path: PathContants.PAGE_NOT_FOUND,

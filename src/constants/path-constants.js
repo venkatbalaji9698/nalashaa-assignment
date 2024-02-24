@@ -1,6 +1,6 @@
 export const PathContants = {
   HOME_PAGE: "/",
-  LISTING_PAGE: "/listing-page/:query",
+  STORY_PAGE: "/story-page/:searchQuery",
   PAGE_NOT_FOUND: "*",
 };
 
