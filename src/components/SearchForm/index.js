@@ -17,7 +17,7 @@ const SearchForm = () => {
     if (searchValue === "") {
       setErrorMessage(ErrorMessages.INVALID_SEARCH_TEXT);
     } else {
-      const path = PathContants.LISTING_PAGE.replace(":query", searchValue);
+      const path = PathContants.STORY_PAGE.replace(":searchQuery", searchValue);
       navigate(path);
     }
   };
