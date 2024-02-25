@@ -1,5 +1,5 @@
+@import '../../scss/mixins.scss';
+
 .loader {
-  padding: 16px;
-  background-color: white;
-  text-align: center;
+  @include card;
 }

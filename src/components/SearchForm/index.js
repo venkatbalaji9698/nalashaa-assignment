@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../Button";
-import Input from "../Input";
+import SearchInput from "../SearchInput";
 import PathContants from "../../constants/path-constants";
 import { ErrorMessages } from "../../constants/app-constants";
 import "./index.scss";
@@ -11,19 +11,22 @@ const SearchForm = () => {
   const [searchValue, setSearchValue] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const redirectToStoryPage = (val) => {
+    const path = PathContants.STORY_PAGE.replace(":searchQuery", val);
+    navigate(path);
+  };
+
   const handleClick = (event) => {
     event.preventDefault();
 
     if (searchValue === "") {
       setErrorMessage(ErrorMessages.INVALID_SEARCH_TEXT);
     } else {
-      const path = PathContants.STORY_PAGE.replace(":searchQuery", searchValue);
-      navigate(path);
+      redirectToStoryPage(searchValue);
     }
   };
 
-  const handleInputChange = (event) => {
-    const val = event.target.value;
+  const handleInputChange = (val) => {
     setSearchValue(val);
 
     if (val === "") {
@@ -35,11 +38,12 @@ const SearchForm = () => {
 
   return (
     <form className="search-form">
-      <Input
+      <SearchInput
         label="Enter search text"
         value={searchValue}
         errorMessage={errorMessage}
         handleChange={handleInputChange}
+        handleTagSelection={redirectToStoryPage}
       />
       <Button
         cssClassName="search-form_button"
