@@ -9,11 +9,6 @@ export const getStoriesList = async (searchTerm, page, pageSize, showtags) => {
   } catch (er) {
     console.log(er);
     return {
-      currentPage: 1,
-      pageSize: 10,
-      pages: 1,
-      results: [],
-      total: 0,
       status: "error",
     };
   }
