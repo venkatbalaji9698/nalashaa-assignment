@@ -2,6 +2,8 @@ import { useId, useState } from "react";
 import { getSuggestionList } from "../../utils/api";
 import "./index.scss";
 
+let timer;
+
 const SearchInput = (props) => {
   const { label, value, errorMessage, handleChange, handleTagSelection } =
     props;
@@ -10,16 +12,25 @@ const SearchInput = (props) => {
   const [isShowSuggestion, setShowSuggestion] = useState(false);
 
   const getSuggestionListAPI = async (val) => {
-    const data = await getSuggestionList(val);
-    setSuggestionList(data);
-    setShowSuggestion(true);
+    if (val) {
+      const data = await getSuggestionList(val);
+      setSuggestionList(data);
+      setShowSuggestion(true);
+    } else {
+      setSuggestionList([]);
+      setShowSuggestion(false);
+    }
   };
 
   const onChange = (event) => {
     const val = event.target.value;
-
     handleChange(val);
-    getSuggestionListAPI(val);
+
+    // debouncing concept used
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      getSuggestionListAPI(val);
+    }, 300);
   };
 
   const onFocus = () => {
