@@ -1,5 +1,7 @@
+import "./index.scss";
+
 const Loader = () => {
-  return <div>loading...</div>;
+  return <div className="loader">loading...</div>;
 };
 
 export default Loader;
