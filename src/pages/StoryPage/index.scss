@@ -1,0 +1,14 @@
+.storypage {
+  background-color: #f7f7f8;
+  padding: 16px;
+  min-height: 100vh;
+
+  h2 {
+    margin-bottom: 24px;
+  }
+
+  &_content {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

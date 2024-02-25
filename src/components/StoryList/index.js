@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux";
+import StoryCard from "./StoryCard";
 
-const StoryList = (props) => {
+const StoryList = () => {
   const storyList = useSelector((state) => state.story.storyList);
 
   return (
-    <ul>
+    <div className="story-list">
       {storyList.map((item) => (
-        <li key={item.id}>{item.storyName}</li>
+        <StoryCard key={item.id} storyData={item} />
       ))}
-    </ul>
+    </div>
   );
 };
 

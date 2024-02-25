@@ -1,0 +1,37 @@
+.story-card {
+  border: 1px solid #e6e5e7;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  height: 200px;
+  cursor: pointer;
+
+  img {
+    height: 100%;
+  }
+
+  &_right {
+    padding-left: 10px;
+  }
+
+  &_taglist {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+    li {
+      padding: 4px 8px;
+      background-color: #f7f7f8;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-right: 8px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      color: #818087;
+      font-weight: 500;
+    }
+  }
+}
